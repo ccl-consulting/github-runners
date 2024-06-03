@@ -4,7 +4,7 @@ x-runnertmpl: &runnertmpl
   image: myoung34/github-runner:latest
   env_file:
     - ./secrets.env
-  environment:
+  environment: &runnerenvtmpl
     ORG_NAME: ccl-consulting
     RUNNER_SCOPE: org
     LABELS: linux,x64
@@ -20,6 +20,7 @@ services:
   runner1:
     <<: *runnertmpl
     environment:
+      <<: *runnerenvtmpl
       RUNNER_NAME: runner1
       RUNNER_WORKDIR: /tmp/github-runners/runner1/work
     volumes:
@@ -28,6 +29,7 @@ services:
   runner2:
     <<: *runnertmpl
     environment:
+      <<: *runnerenvtmpl
       RUNNER_NAME: runner2
       RUNNER_WORKDIR: /tmp/github-runners/runner2/work
     volumes:
@@ -36,6 +38,7 @@ services:
   runner3:
     <<: *runnertmpl
     environment:
+      <<: *runnerenvtmpl
       RUNNER_NAME: runner3
       RUNNER_WORKDIR: /tmp/github-runners/runner3/work
     volumes:
@@ -44,6 +47,7 @@ services:
   runner4:
     <<: *runnertmpl
     environment:
+      <<: *runnerenvtmpl
       RUNNER_NAME: runner4
       RUNNER_WORKDIR: /tmp/github-runners/runner4/work
     volumes:
@@ -52,6 +56,7 @@ services:
   runner5:
     <<: *runnertmpl
     environment:
+      <<: *runnerenvtmpl
       RUNNER_NAME: runner5
       RUNNER_WORKDIR: /tmp/github-runners/runner5/work
     volumes:
