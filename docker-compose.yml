@@ -1,19 +1,21 @@
 version: '2.3'
+
+x-runnertmpl: &runnertmpl
+  image: myoung34/github-runner:latest
+  environment:
+    ORG_NAME: ccl-consulting
+    ACCESS_TOKEN: XXXXXXXXXXXXXXXXXXXX
+    RUNNER_SCOPE: org
+    LABELS: linux,x64
+    RUNNER_NAME: runnerX
+    RUNNER_WORKDIR: /tmp/runnerX/work
+  security_opt:
+    - label:disable
+  volumes:
+    - '/var/run/docker.sock:/var/run/docker.sock'
+    - '/tmp/runnerX:/tmp/runnerX'
+
 services:
-  x-runnertmpl: &runnertmpl
-    image: myoung34/github-runner:latest
-    environment:
-      ORG_NAME: ccl-consulting
-      ACCESS_TOKEN: XXXXXXXXXXXXXXXXXXXX
-      RUNNER_SCOPE: org
-      LABELS: linux,x64
-      RUNNER_NAME: runnerX
-      RUNNER_WORKDIR: /tmp/runnerX/work
-    security_opt:
-      - label:disable
-    volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runnerX:/tmp/runnerX'
   runner1:
     <<: *runnertmpl
     environment:
