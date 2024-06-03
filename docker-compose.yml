@@ -1,7 +1,7 @@
 version: '2.3'
 
 x-runnertmpl: &runnertmpl
-  image: myoung34/github-runner:latest
+  build: ./image
   env_file:
     - ./secrets.env
   environment: &runnerenvtmpl
