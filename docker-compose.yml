@@ -1,0 +1,56 @@
+version: '2.3'
+services:
+  x-runnertmpl: &runnertmpl
+    image: myoung34/github-runner:latest
+    environment:
+      ORG_NAME: ccl-consulting
+      ACCESS_TOKEN: XXXXXXXXXXXXXXXXXXXX
+      RUNNER_SCOPE: org
+      LABELS: linux,x64
+      RUNNER_NAME: runnerX
+      RUNNER_WORKDIR: /tmp/runnerX/work
+    security_opt:
+      - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runnerX:/tmp/runnerX'
+  runner1:
+    <<: *runnertmpl
+    environment:
+      RUNNER_NAME: runner1
+      RUNNER_WORKDIR: /tmp/runner1/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner1:/tmp/runner1'
+  runner2:
+    <<: *runnertmpl
+    environment:
+      RUNNER_NAME: runner2
+      RUNNER_WORKDIR: /tmp/runner2/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner2:/tmp/runner2'
+  runner3:
+    <<: *runnertmpl
+    environment:
+      RUNNER_NAME: runner3
+      RUNNER_WORKDIR: /tmp/runner3/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner3:/tmp/runner3'
+  runner4:
+    <<: *runnertmpl
+    environment:
+      RUNNER_NAME: runner4
+      RUNNER_WORKDIR: /tmp/runner4/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner4:/tmp/runner4'
+  runner5:
+    <<: *runnertmpl
+    environment:
+      RUNNER_NAME: runner5
+      RUNNER_WORKDIR: /tmp/runner5/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner5:/tmp/runner5'
