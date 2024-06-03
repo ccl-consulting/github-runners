@@ -9,51 +9,51 @@ x-runnertmpl: &runnertmpl
     RUNNER_SCOPE: org
     LABELS: linux,x64
     RUNNER_NAME: runnerX
-    RUNNER_WORKDIR: /tmp/runnerX/work
+    RUNNER_WORKDIR: /tmp/github-runners/runnerX/work
   security_opt:
     - label:disable
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
-    - '/tmp/runnerX:/tmp/runnerX'
+    - '/tmp/github-runners/runnerX:/tmp/github-runners/runnerX'
 
 services:
   runner1:
     <<: *runnertmpl
     environment:
       RUNNER_NAME: runner1
-      RUNNER_WORKDIR: /tmp/runner1/work
+      RUNNER_WORKDIR: /tmp/github-runners/runner1/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runner1:/tmp/runner1'
+      - '/tmp/github-runners/runner1:/tmp/github-runners/runner1'
   runner2:
     <<: *runnertmpl
     environment:
       RUNNER_NAME: runner2
-      RUNNER_WORKDIR: /tmp/runner2/work
+      RUNNER_WORKDIR: /tmp/github-runners/runner2/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runner2:/tmp/runner2'
+      - '/tmp/github-runners/runner2:/tmp/github-runners/runner2'
   runner3:
     <<: *runnertmpl
     environment:
       RUNNER_NAME: runner3
-      RUNNER_WORKDIR: /tmp/runner3/work
+      RUNNER_WORKDIR: /tmp/github-runners/runner3/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runner3:/tmp/runner3'
+      - '/tmp/github-runners/runner3:/tmp/github-runners/runner3'
   runner4:
     <<: *runnertmpl
     environment:
       RUNNER_NAME: runner4
-      RUNNER_WORKDIR: /tmp/runner4/work
+      RUNNER_WORKDIR: /tmp/github-runners/runner4/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runner4:/tmp/runner4'
+      - '/tmp/github-runners/runner4:/tmp/github-runners/runner4'
   runner5:
     <<: *runnertmpl
     environment:
       RUNNER_NAME: runner5
-      RUNNER_WORKDIR: /tmp/runner5/work
+      RUNNER_WORKDIR: /tmp/github-runners/runner5/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/runner5:/tmp/runner5'
+      - '/tmp/github-runners/runner5:/tmp/github-runners/runner5'
