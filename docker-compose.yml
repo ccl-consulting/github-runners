@@ -2,9 +2,11 @@ version: '2.3'
 
 x-runnertmpl: &runnertmpl
   image: myoung34/github-runner:latest
+  env_file:
+    - path: ./secrets.env
+      required: true
   environment:
     ORG_NAME: ccl-consulting
-    ACCESS_TOKEN: XXXXXXXXXXXXXXXXXXXX
     RUNNER_SCOPE: org
     LABELS: linux,x64
     RUNNER_NAME: runnerX
