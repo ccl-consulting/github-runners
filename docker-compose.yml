@@ -17,6 +17,15 @@ x-runnertmpl: &runnertmpl
     - '/tmp/github-runners/runnerX:/tmp/github-runners/runnerX'
 
 services:
+  runner0:
+    <<: *runnertmpl
+    environment:
+      <<: *runnerenvtmpl
+      RUNNER_NAME: runner0
+      RUNNER_WORKDIR: /tmp/github-runners/runner0/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/github-runners/runner0:/tmp/github-runners/runner0'
   runner1:
     <<: *runnertmpl
     environment:
@@ -62,3 +71,39 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/tmp/github-runners/runner5:/tmp/github-runners/runner5'
+  runner6:
+    <<: *runnertmpl
+    environment:
+      <<: *runnerenvtmpl
+      RUNNER_NAME: runner6
+      RUNNER_WORKDIR: /tmp/github-runners/runner6/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/github-runners/runner6:/tmp/github-runners/runner6'
+  runner7:
+    <<: *runnertmpl
+    environment:
+      <<: *runnerenvtmpl
+      RUNNER_NAME: runner7
+      RUNNER_WORKDIR: /tmp/github-runners/runner7/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/github-runners/runner7:/tmp/github-runners/runner7'
+  runner8:
+    <<: *runnertmpl
+    environment:
+      <<: *runnerenvtmpl
+      RUNNER_NAME: runner8
+      RUNNER_WORKDIR: /tmp/github-runners/runner8/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/github-runners/runner8:/tmp/github-runners/runner8'
+  runner9:
+    <<: *runnertmpl
+    environment:
+      <<: *runnerenvtmpl
+      RUNNER_NAME: runner9
+      RUNNER_WORKDIR: /tmp/github-runners/runner9/work
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/github-runners/runner9:/tmp/github-runners/runner9'
