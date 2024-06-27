@@ -24,6 +24,7 @@ services:
     environment:
       BUILDKIT_TCP_TRANSPORT_ENABLED: 'true'
       EARTHLY_RESET_TMP_DIR: 'true'
+      BUILDKIT_TLS_ENABLED: 'false'
     privileged: true
     tty: true
     volumes:
