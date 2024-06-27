@@ -15,17 +15,15 @@ x-runnertmpl: &runnertmpl
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '/tmp/github-runners/runnerX:/tmp/github-runners/runnerX'
-  # links:
-  #   - earthlybuildkit
+  links:
+    - earthlybuildkit
 
 services:
   earthlybuildkit:
     image: earthly/buildkitd:v0.8.13@sha256:bfe62d2839191629c9ee266233a276f4ea3d8d5b11e2433ff6917e5e310ef7fe
     environment:
-      ## Earthly has no way to disable TLS on client side with environment variables.
-      ## The docker socket is mounted into the GitHub runners, we'll use this mode instead.
-      # BUILDKIT_TCP_TRANSPORT_ENABLED: 'true'
-      # BUILDKIT_TLS_ENABLED: 'false'
+      BUILDKIT_TCP_TRANSPORT_ENABLED: 'true'
+      BUILDKIT_TLS_ENABLED: 'false'
       EARTHLY_RESET_TMP_DIR: 'true'
     privileged: true
     tty: true
