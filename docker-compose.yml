@@ -32,7 +32,7 @@ services:
     privileged: true
     tty: true
     volumes:
-      - '/tmp/github-runners/earthly-buildkit:/tmp/buildkit:rw'
+      - './tmp/earthlybuildkit:/tmp/buildkit:rw'
 
   runner0:
     <<: *runnertmpl
