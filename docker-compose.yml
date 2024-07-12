@@ -7,7 +7,7 @@ x-runnertmpl: &runnertmpl
     RUNNER_SCOPE: org
     LABELS: linux,x64
     RUNNER_NAME: runnerX
-    RUNNER_WORKDIR: /tmp/runner
+    RUNNER_WORKDIR: /tmp/runner/work
   security_opt:
     - label:disable
   volumes:
