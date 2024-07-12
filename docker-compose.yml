@@ -94,7 +94,7 @@ services:
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner4
-      TMPDIR: '${PWD}/tmp/runner4/tmp'
+      TMPDIR: '${PWD}/tmp/runner4_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
@@ -130,7 +130,7 @@ services:
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner7
-      TMPDIR: '${PWD}/tmp/runner7/tmp'
+      TMPDIR: '${PWD}/tmp/runner7_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
@@ -142,7 +142,7 @@ services:
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner8
-      TMPDIR: '${PWD}/tmp/runner8/tmp'
+      TMPDIR: '${PWD}/tmp/runner8_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
