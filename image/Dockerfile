@@ -4,3 +4,10 @@ FROM myoung34/github-runner:ubuntu-focal@sha256:45f9af2f8dacdf26f81e978eee9638c2
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
+
+# Install more tools
+RUN apt-get update && \
+    apt-get install -y \
+        iproute2 \
+    && \
+    rm -rf /var/lib/apt/lists/*
