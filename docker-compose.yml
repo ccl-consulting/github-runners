@@ -1,5 +1,3 @@
-version: '2.3'
-
 x-runnertmpl: &runnertmpl
   build: ./image
   env_file:
