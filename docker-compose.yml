@@ -7,6 +7,7 @@ x-runnertmpl: &runnertmpl
     RUNNER_SCOPE: org
     LABELS: linux,x64
     RUNNER_NAME: runnerX
+    TMPDIR: '${PWD}/tmp/runnerX_tmp'
     RUNNER_WORKDIR: /tmp/runner/work
   security_opt:
     - label:disable
@@ -14,10 +15,14 @@ x-runnertmpl: &runnertmpl
     - '/var/run/docker.sock:/var/run/docker.sock:ro'
     - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
     - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+    - './tmp/runnerX_tmp:${PWD}/tmp/runnerX_tmp:rw'
     - './tmp/runnerX:/tmp/runner:rw'
   # Expose to runners
-  links:
-    - earthlybuildkit
+  # links:
+  #   - earthlybuildkit
+  network_mode: host
+  extra_hosts:
+    - earthlybuildkit:127.0.0.1
   # Grant access to KVM
   devices:
     - /dev/kvm
@@ -35,104 +40,126 @@ services:
     tty: true
     volumes:
       - './tmp/earthlybuildkit:/tmp/buildkit:rw'
+    ports:
+      - 8382:8372
 
   runner0:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner0
+      TMPDIR: '${PWD}/tmp/runner0_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner0_tmp:${PWD}/tmp/runner0_tmp:rw'
       - './tmp/runner0:/tmp/runner:rw'
   runner1:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner1
+      TMPDIR: '${PWD}/tmp/runner1_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner1_tmp:${PWD}/tmp/runner1_tmp:rw'
       - './tmp/runner1:/tmp/runner:rw'
   runner2:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner2
+      TMPDIR: '${PWD}/tmp/runner2_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner2_tmp:${PWD}/tmp/runner2_tmp:rw'
       - './tmp/runner2:/tmp/runner:rw'
   runner3:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner3
+      TMPDIR: '${PWD}/tmp/runner3_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner3_tmp:${PWD}/tmp/runner3_tmp:rw'
       - './tmp/runner3:/tmp/runner:rw'
   runner4:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner4
+      TMPDIR: '${PWD}/tmp/runner4_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner4_tmp:${PWD}/tmp/runner4_tmp:rw'
       - './tmp/runner4:/tmp/runner:rw'
   runner5:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner5
+      TMPDIR: '${PWD}/tmp/runner5_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner5_tmp:${PWD}/tmp/runner5_tmp:rw'
       - './tmp/runner5:/tmp/runner:rw'
   runner6:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner6
+      TMPDIR: '${PWD}/tmp/runner6_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner6_tmp:${PWD}/tmp/runner6_tmp:rw'
       - './tmp/runner6:/tmp/runner:rw'
   runner7:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner7
+      TMPDIR: '${PWD}/tmp/runner7_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner7_tmp:${PWD}/tmp/runner7_tmp:rw'
       - './tmp/runner7:/tmp/runner:rw'
   runner8:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner8
+      TMPDIR: '${PWD}/tmp/runner8_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner8_tmp:${PWD}/tmp/runner8_tmp:rw'
       - './tmp/runner8:/tmp/runner:rw'
   runner9:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner9
+      TMPDIR: '${PWD}/tmp/runner9_tmp'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
       - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
+      - './tmp/runner9_tmp:${PWD}/tmp/runner9_tmp:rw'
       - './tmp/runner9:/tmp/runner:rw'
