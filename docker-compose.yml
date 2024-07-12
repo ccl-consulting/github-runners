@@ -13,8 +13,14 @@ x-runnertmpl: &runnertmpl
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '/tmp/github-runners/runnerX:/tmp/github-runners/runnerX'
+  # Expose to runners
   links:
     - earthlybuildkit
+  # Grant access to KVM
+  devices:
+    - /dev/kvm
+  cap_add:
+    - NET_ADMIN
 
 services:
   earthlybuildkit:
