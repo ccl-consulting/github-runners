@@ -7,12 +7,12 @@ x-runnertmpl: &runnertmpl
     RUNNER_SCOPE: org
     LABELS: linux,x64
     RUNNER_NAME: runnerX
-    RUNNER_WORKDIR: /tmp/github-runners/runnerX/work
+    RUNNER_WORKDIR: /tmp/runner
   security_opt:
     - label:disable
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
-    - '/tmp/github-runners/runnerX:/tmp/github-runners/runnerX'
+    - './tmp/runnerX:/tmp/runner'
   # Expose to runners
   links:
     - earthlybuildkit
@@ -39,88 +39,78 @@ services:
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner0
-      RUNNER_WORKDIR: /tmp/github-runners/runner0/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner0:/tmp/github-runners/runner0'
+      - './tmp/runner0:/tmp/runner'
   runner1:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner1
-      RUNNER_WORKDIR: /tmp/github-runners/runner1/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner1:/tmp/github-runners/runner1'
+      - './tmp/runner1:/tmp/runner'
   runner2:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner2
-      RUNNER_WORKDIR: /tmp/github-runners/runner2/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner2:/tmp/github-runners/runner2'
+      - './tmp/runner2:/tmp/runner'
   runner3:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner3
-      RUNNER_WORKDIR: /tmp/github-runners/runner3/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner3:/tmp/github-runners/runner3'
+      - './tmp/runner3:/tmp/runner'
   runner4:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner4
-      RUNNER_WORKDIR: /tmp/github-runners/runner4/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner4:/tmp/github-runners/runner4'
+      - './tmp/runner4:/tmp/runner'
   runner5:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner5
-      RUNNER_WORKDIR: /tmp/github-runners/runner5/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner5:/tmp/github-runners/runner5'
+      - './tmp/runner5:/tmp/runner'
   runner6:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner6
-      RUNNER_WORKDIR: /tmp/github-runners/runner6/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner6:/tmp/github-runners/runner6'
+      - './tmp/runner6:/tmp/runner'
   runner7:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner7
-      RUNNER_WORKDIR: /tmp/github-runners/runner7/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner7:/tmp/github-runners/runner7'
+      - './tmp/runner7:/tmp/runner'
   runner8:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner8
-      RUNNER_WORKDIR: /tmp/github-runners/runner8/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner8:/tmp/github-runners/runner8'
+      - './tmp/runner8:/tmp/runner'
   runner9:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner9
-      RUNNER_WORKDIR: /tmp/github-runners/runner9/work
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/tmp/github-runners/runner9:/tmp/github-runners/runner9'
+      - './tmp/runner9:/tmp/runner'
