@@ -12,5 +12,6 @@ RUN apt-get update && \
         libvirt-clients \
         qemu-system \
         qemu-utils \
+        virtinst \
     && \
     rm -rf /var/lib/apt/lists/*
