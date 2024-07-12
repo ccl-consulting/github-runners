@@ -16,6 +16,12 @@ x-runnertmpl: &runnertmpl
   links:
     - earthlybuildkit
 
+  devices:
+    - /dev/kvm
+  cap_add:
+    - NET_ADMIN
+
+
 services:
   earthlybuildkit:
     image: earthly/buildkitd:v0.8.13@sha256:bfe62d2839191629c9ee266233a276f4ea3d8d5b11e2433ff6917e5e310ef7fe
