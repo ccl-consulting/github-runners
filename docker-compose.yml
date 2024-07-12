@@ -11,8 +11,9 @@ x-runnertmpl: &runnertmpl
   security_opt:
     - label:disable
   volumes:
-    - '/var/run/docker.sock:/var/run/docker.sock'
-    - './tmp/runnerX:/tmp/runner'
+    - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+    - './tmp/runnerX:/tmp/runner:rw'
   # Expose to runners
   links:
     - earthlybuildkit
@@ -40,77 +41,87 @@ services:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner0
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner0:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner0:/tmp/runner:rw'
   runner1:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner1
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner1:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner1:/tmp/runner:rw'
   runner2:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner2
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner2:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner2:/tmp/runner:rw'
   runner3:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner3
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner3:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner3:/tmp/runner:rw'
   runner4:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner4
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner4:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner4:/tmp/runner:rw'
   runner5:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner5
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner5:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner5:/tmp/runner:rw'
   runner6:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner6
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner6:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner6:/tmp/runner:rw'
   runner7:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner7
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner7:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner7:/tmp/runner:rw'
   runner8:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner8
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner8:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner8:/tmp/runner:rw'
   runner9:
     <<: *runnertmpl
     environment:
       <<: *runnerenvtmpl
       RUNNER_NAME: runner9
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - './tmp/runner9:/tmp/runner'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - './tmp/runner9:/tmp/runner:rw'
