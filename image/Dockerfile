@@ -11,5 +11,6 @@ RUN apt-get update && \
         iproute2 \
         libvirt-clients \
         qemu-system \
+        qemu-utils \
     && \
     rm -rf /var/lib/apt/lists/*
