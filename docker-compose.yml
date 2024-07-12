@@ -13,6 +13,7 @@ x-runnertmpl: &runnertmpl
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock:ro'
     - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+    - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
     - './tmp/runnerX:/tmp/runner:rw'
   # Expose to runners
   links:
@@ -43,6 +44,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner0:/tmp/runner:rw'
   runner1:
     <<: *runnertmpl
@@ -52,6 +54,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner1:/tmp/runner:rw'
   runner2:
     <<: *runnertmpl
@@ -61,6 +64,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner2:/tmp/runner:rw'
   runner3:
     <<: *runnertmpl
@@ -70,6 +74,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner3:/tmp/runner:rw'
   runner4:
     <<: *runnertmpl
@@ -79,6 +84,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner4:/tmp/runner:rw'
   runner5:
     <<: *runnertmpl
@@ -88,6 +94,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner5:/tmp/runner:rw'
   runner6:
     <<: *runnertmpl
@@ -97,6 +104,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner6:/tmp/runner:rw'
   runner7:
     <<: *runnertmpl
@@ -106,6 +114,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner7:/tmp/runner:rw'
   runner8:
     <<: *runnertmpl
@@ -115,6 +124,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner8:/tmp/runner:rw'
   runner9:
     <<: *runnertmpl
@@ -124,4 +134,5 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
       - '/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock:ro'
+      - '/var/lib/libvirt/images:/var/lib/libvirt/images:rw'
       - './tmp/runner9:/tmp/runner:rw'
