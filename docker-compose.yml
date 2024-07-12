@@ -40,6 +40,8 @@ services:
     tty: true
     volumes:
       - './tmp/earthlybuildkit:/tmp/buildkit:rw'
+    ports:
+      - 8382:8372
 
   runner0:
     <<: *runnertmpl
